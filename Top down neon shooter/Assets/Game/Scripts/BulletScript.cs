@@ -22,7 +22,7 @@ public class BulletScript : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Instantiate(_HitEffect, transform.position, Quaternion.identity);
-            other.gameObject.GetComponent<Enemy>().DoDamage(35);
+            other.gameObject.GetComponent<Enemy>().DoDamage(1);
             this.gameObject.SetActive(false);
         }
     }

@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour {
 
+    [SerializeField] private CameraController _Camera;
     [SerializeField] private GameObject _PlayerObject;
     [SerializeField] private Transform _ShootPos;
     [SerializeField] private ObjectPool _ObjectPool;
     [SerializeField] private float _ShootSpeed;
-    [SerializeField] private float _BulletSpeed;
 
     private float _Timer;
 
     void Update()
     {
-        if(Input.GetMouseButton(0))
-        _Timer += 1 * Time.deltaTime;
+        if (Input.GetMouseButton(0)) {
+            _Timer += 1 * Time.deltaTime;
+            _Camera.ScreenShake(0.1f, 0.1f);
+        }
         if(_Timer > _ShootSpeed)
         {
             Spawn();
@@ -30,7 +32,7 @@ public class Shooting : MonoBehaviour {
             if (!_ObjectPool._P_Objects[i].activeInHierarchy)
             {
                 _ObjectPool._P_Objects[i].transform.position = _ShootPos.position;
-                _ObjectPool._P_Objects[i].transform.rotation = _PlayerObject.transform.rotation;
+                _ObjectPool._P_Objects[i].transform.rotation = Quaternion.Euler(_PlayerObject.transform.rotation.eulerAngles.x, _PlayerObject.transform.rotation.eulerAngles.y + Random.Range(-4, 4), _PlayerObject.transform.rotation.eulerAngles.z );
                 _ObjectPool._P_Objects[i].SetActive(true);
                 break;
             }

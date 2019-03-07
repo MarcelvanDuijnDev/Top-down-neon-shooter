@@ -20,7 +20,7 @@ public class ScoreHandler : MonoBehaviour {
         _ScoreText.text = _Score.ToString("0");
     }
 
-    void AddScore(float scoreAdd)
+    public void AddScore(float scoreAdd)
     {
         _Score += scoreAdd;
     }

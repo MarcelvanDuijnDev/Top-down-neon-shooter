@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour {
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
 
-
         //Sprint
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -46,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
 
-            _PlayerObject.transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+            _PlayerObject.transform.LookAt(new Vector3(pointToLook.x, _PlayerObject.transform.position.y, pointToLook.z));
         }
     }
 }
