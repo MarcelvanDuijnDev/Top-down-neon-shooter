@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float normalSpeed, sprintSpeed;
     [SerializeField] private float jumpSpeed;
     [SerializeField] private float gravity;
+    [SerializeField] private float _DashDistance;
+
     private float speed;
     private Vector3 moveDirection = Vector3.zero;
 
@@ -27,6 +29,12 @@ public class PlayerMovement : MonoBehaviour {
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
+
+        //Dash
+        if(Input.GetMouseButtonDown(1))
+        {
+            Dash();
+        }
 
         //Sprint
         if (Input.GetKey(KeyCode.LeftShift))
@@ -46,6 +54,24 @@ public class PlayerMovement : MonoBehaviour {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
 
             _PlayerObject.transform.LookAt(new Vector3(pointToLook.x, _PlayerObject.transform.position.y, pointToLook.z));
+        }
+    }
+
+    private void Dash()
+    {
+        RaycastHit hit;
+        Vector3 destination = _PlayerObject.transform.position + _PlayerObject.transform.forward * _DashDistance;
+
+        if (Physics.Linecast(_PlayerObject.transform.position, destination, out hit))
+        {
+            destination = _PlayerObject.transform.position + _PlayerObject.transform.forward * (hit.distance - 1);
+        }
+
+        if (Physics.Raycast(destination, -Vector3.up, out hit))
+        {
+            destination = hit.point;
+            destination.y = transform.position.y;
+            transform.position = destination;
         }
     }
 }

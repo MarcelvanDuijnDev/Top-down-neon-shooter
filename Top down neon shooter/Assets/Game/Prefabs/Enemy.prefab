@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4966978540900838}
   - component: {fileID: 108405954798991250}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 195446331980691890}
   - component: {fileID: 114283902772625978}
   - component: {fileID: 65439033401487628}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4789955437287550}
   - component: {fileID: 198269767413263848}
   - component: {fileID: 199154004146130356}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
