@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    [SerializeField] private float _MaxHealht;
+    [SerializeField] private float _MaxHealth;
     [SerializeField] private GameObject _DieEffect;
     private float _Health;
     private NavMeshAgent _Nav;
     private GameObject _PlayerObj;
 
     void OnEnable() {
-        _Health = _MaxHealht;
+        _Health = _MaxHealth;
     }
 
 	void Start () {
@@ -35,11 +35,11 @@ public class Enemy : MonoBehaviour {
         _Health -= damageAmount;
     }
 
-
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
+            Debug.Log("Hit Player");
             Instantiate(_DieEffect, transform.position, Quaternion.identity);
-            other.gameObject.GetComponent<PlayerScript>().DoDamage(10);
+            GameObject.Find("GameHandler").GetComponent<GameHandler>().DoDamage();
             gameObject.SetActive(false);
         }
     }

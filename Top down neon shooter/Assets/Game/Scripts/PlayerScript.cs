@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-    [SerializeField] private float _Health;
 
 	void Start () {
         
@@ -15,7 +14,4 @@ public class PlayerScript : MonoBehaviour {
 
     }
 
-    public void DoDamage(float damage) {
-        _Health -= damage;
-    }
 }

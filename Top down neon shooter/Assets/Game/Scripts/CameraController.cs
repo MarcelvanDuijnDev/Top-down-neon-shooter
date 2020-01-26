@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour {
         }
         #endregion
 
-        if (Input.GetKeyDown(KeyCode.P)) { ScreenShake(1, 1); }
+        if (Input.GetKeyDown(KeyCode.O)) { ScreenShake(1, 1); }
 
     }
 

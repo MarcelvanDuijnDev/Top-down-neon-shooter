@@ -17,11 +17,11 @@ public class Shooting : MonoBehaviour {
     {
         if (Input.GetMouseButton(0)) {
             _Timer += 1 * Time.deltaTime;
-            _Camera.ScreenShake(0.1f, 0.1f);
         }
         if(_Timer > _ShootSpeed)
         {
             Spawn();
+            _Camera.ScreenShake(0.1f, 0.1f);
             _Timer = 0;
         }
     }

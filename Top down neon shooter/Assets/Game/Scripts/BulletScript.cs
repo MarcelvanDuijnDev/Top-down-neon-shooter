@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     [SerializeField] private float _Speed;
+    [SerializeField] private float _Damage;
 
     [SerializeField] private GameObject _BulletObj;
     [SerializeField] private Disable _DisableScript;
@@ -30,8 +31,8 @@ public class BulletScript : MonoBehaviour
             }
             if (other.tag == "Enemy") {
                 _Particle.Play();
-                other.gameObject.GetComponent<Enemy>().DoDamage(5);
-                _DisableScript.DisableObject(_Particle.main.duration);
+                other.gameObject.GetComponent<Enemy>().DoDamage(_Damage);
+                _DisableScript.DisableObject(5);
                 _BulletObj.gameObject.SetActive(false);
             }
         }

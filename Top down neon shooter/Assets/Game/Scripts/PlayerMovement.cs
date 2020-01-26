@@ -5,15 +5,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     //Movement
+    [Header("Refrences")]
     [SerializeField] private Camera _Camera;
     [SerializeField] private GameObject _PlayerObject;
-    [SerializeField] private float normalSpeed, sprintSpeed;
-    [SerializeField] private float jumpSpeed;
-    [SerializeField] private float gravity;
+    [Header("Speed")]
+    [SerializeField] private float _NormalSpeed;
+    [SerializeField] private float _SprintSpeed, _DashSpeed, _JumpSpeed;
+    [Header("Other Settings")]
+    [SerializeField] private float _Gravity;
     [SerializeField] private float _DashDistance;
 
-    private float speed;
+    private bool _Dashing;
+    private Vector3 _DashPosition;
+    private float _Speed;
     private Vector3 moveDirection = Vector3.zero;
+    private BoxCollider _BC;
+
+    void Start()
+    {
+        _BC = GetComponent<BoxCollider>();
+    }
 
     void Update()
     {
@@ -23,28 +34,31 @@ public class PlayerMovement : MonoBehaviour {
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-            if (Input.GetButton("Jump"))
-                moveDirection.y = jumpSpeed;
+            moveDirection *= _Speed;
+            //if (Input.GetButton("Jump"))
+            //    moveDirection.y = _JumpSpeed;
         }
-        moveDirection.y -= gravity * Time.deltaTime;
+        moveDirection.y -= _Gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
 
         //Dash
-        if(Input.GetMouseButtonDown(1))
-        {
+        if(Input.GetButtonDown("Jump"))
             Dash();
+        if(_Dashing)
+        {
+            transform.position = Vector3.MoveTowards(transform.position,_DashPosition, _DashSpeed * Time.deltaTime);
+            if(transform.position == _DashPosition)
+            {
+                _BC.enabled = true;
+                _Dashing = false;
+            }
         }
 
         //Sprint
         if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = sprintSpeed;
-        }
+            _Speed = _SprintSpeed;
         else
-        {
-            speed = normalSpeed;
-        }
+            _Speed = _NormalSpeed;
 
         Ray cameraRay = _Camera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
@@ -60,18 +74,20 @@ public class PlayerMovement : MonoBehaviour {
     private void Dash()
     {
         RaycastHit hit;
-        Vector3 destination = _PlayerObject.transform.position + _PlayerObject.transform.forward * _DashDistance;
 
-        if (Physics.Linecast(_PlayerObject.transform.position, destination, out hit))
-        {
-            destination = _PlayerObject.transform.position + _PlayerObject.transform.forward * (hit.distance - 1);
-        }
+        Vector3 direction = new Vector3(Input.GetAxis("Horizontal") * _DashDistance,0, Input.GetAxis("Vertical") * _DashDistance);
+        Vector3 destination = _PlayerObject.transform.position + direction;
 
-        if (Physics.Raycast(destination, -Vector3.up, out hit))
+        if (!Physics.Linecast(_PlayerObject.transform.position, destination, out hit))
         {
-            destination = hit.point;
-            destination.y = transform.position.y;
-            transform.position = destination;
+            _Dashing = true;
+            _BC.enabled = false;
+            if (Physics.Raycast(destination, -Vector3.up, out hit))
+            {
+                destination = hit.point;
+                destination.y = transform.position.y;
+                _DashPosition = destination;
+            }
         }
     }
 }

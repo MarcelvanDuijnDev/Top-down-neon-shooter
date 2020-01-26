@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 02047b15bae527b48ba05082e2f4ad1c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Log
+    100002: Log1
+    100004: Log2
+    100006: Log3
+    100008: Log4
+    100010: //RootNode
+    100012: Rock
+    100014: Rock1
+    100016: Rock2
+    100018: Rock3
+    100020: Rock4
+    100022: Rock5
+    100024: Rock6
+    100026: Rock7
+    100028: Rock8
+    100030: Rock9
+    100032: Border
+    100034: Campfire
+    100036: Ground
+    100038: OutSideMap
+    100040: pCube1
+    400000: Log
+    400002: Log1
+    400004: Log2
+    400006: Log3
+    400008: Log4
+    400010: //RootNode
+    400012: Rock
+    400014: Rock1
+    400016: Rock2
+    400018: Rock3
+    400020: Rock4
+    400022: Rock5
+    400024: Rock6
+    400026: Rock7
+    400028: Rock8
+    400030: Rock9
+    400032: Border
+    400034: Campfire
+    400036: Ground
+    400038: OutSideMap
+    400040: pCube1
+    2100000: lambert1
+    2300000: Log
+    2300002: Log1
+    2300004: Log2
+    2300006: Log3
+    2300008: Log4
+    2300010: Rock
+    2300012: Rock1
+    2300014: Rock2
+    2300016: Rock3
+    2300018: Rock4
+    2300020: Rock5
+    2300022: Rock6
+    2300024: Rock7
+    2300026: Rock8
+    2300028: Rock9
+    2300030: Border
+    2300032: Ground
+    2300034: OutSideMap
+    2300036: pCube1
+    3300000: Log
+    3300002: Log1
+    3300004: Log2
+    3300006: Log3
+    3300008: Log4
+    3300010: Rock
+    3300012: Rock1
+    3300014: Rock2
+    3300016: Rock3
+    3300018: Rock4
+    3300020: Rock5
+    3300022: Rock6
+    3300024: Rock7
+    3300026: Rock8
+    3300028: Rock9
+    3300030: Border
+    3300032: Ground
+    3300034: OutSideMap
+    3300036: pCube1
+    4300000: Log4
+    4300002: Log3
+    4300004: Log2
+    4300006: Log1
+    4300008: Log
+    4300010: Rock
+    4300012: Rock1
+    4300014: Rock2
+    4300016: Rock3
+    4300018: Rock4
+    4300020: Rock5
+    4300022: Rock6
+    4300024: Rock7
+    4300026: Rock8
+    4300028: Rock9
+    4300030: Ground
+    4300032: Border
+    4300034: OutSideMap
+    4300036: pCube1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
