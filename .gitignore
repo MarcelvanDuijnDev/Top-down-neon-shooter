@@ -20,6 +20,7 @@ ExportedObj/
 *.user
 *.unityproj
 *.booproj
+*.meta
 
 # ============ #
 # OS generated #
@@ -33,3 +34,4 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *.ide
+Tools/.vs/Tools/v15/Server/sqlite3/
