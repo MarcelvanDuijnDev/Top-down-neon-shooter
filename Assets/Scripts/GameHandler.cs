@@ -46,16 +46,10 @@ public class GameHandler : MonoBehaviour {
     }
     public void DoDamage()
     {
-        _CurrentHealth--;
-        _HealthObj[_CurrentHealth].SetActive(false);
-    }
-
-
-    private void CheckHealth()
-    {
-        if(_CurrentHealth == 0)
+        if (_CurrentHealth > 0)
         {
-
+            _CurrentHealth--;
+            _HealthObj[_CurrentHealth].SetActive(false);
         }
     }
 }

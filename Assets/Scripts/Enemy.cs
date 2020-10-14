@@ -22,17 +22,16 @@ public class Enemy : MonoBehaviour {
 	
 	void Update () {
         _Nav.destination = _PlayerObj.transform.position;
-
-        if(_Health <= 0)
-        {
-            GameObject.Find("GameHandler").GetComponent<ScoreHandler>().AddScore(10000);
-            this.gameObject.SetActive(false);
-        }
     }
 
     public void DoDamage(float damageAmount)
     {
         _Health -= damageAmount;
+        if(_Health <= 0)
+        {
+            GameObject.Find("GameHandler").GetComponent<ScoreHandler>().AddScore(10000);
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {

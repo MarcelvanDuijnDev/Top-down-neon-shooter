@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 677646795f74d8542944fe59fca74ffd
-  - enabled: 1
-    path: Assets/Scenes/LowPoly.unity
-    guid: b927b770b0de3254b97f5b290da81923
-  - enabled: 1
-    path: Assets/Scenes/Neon.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Game.unity
+    guid: 6edacb63fd7cea944835d361429a7071
   m_configObjects: {}
