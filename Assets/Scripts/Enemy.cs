@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour {
         _Health -= damageAmount;
         if(_Health <= 0)
         {
-            GameObject.Find("GameHandler").GetComponent<ScoreHandler>().AddScore(10000);
+            GameObject.Find("GameHandler").GetComponent<ScoreHandler>().AddScore(100);
             this.gameObject.SetActive(false);
         }
     }

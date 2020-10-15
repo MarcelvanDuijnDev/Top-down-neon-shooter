@@ -9,7 +9,6 @@ public class EnemyHandler : MonoBehaviour {
     [SerializeField] private ObjectPool _ObjectPool;
 
     private float _Timer;
-    private int _SpawnID;
 
 	void Update () {
         _Timer += 1 * Time.deltaTime;

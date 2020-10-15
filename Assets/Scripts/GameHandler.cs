@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class GameHandler : MonoBehaviour {
 
 	void Start ()
     {
+        _GameOverMenu.SetActive(false);
         for (int i = 0; i < _HealthParent.transform.childCount; i++)
         {
             _HealthObj.Add(_HealthParent.transform.GetChild(i).gameObject);
@@ -37,6 +39,12 @@ public class GameHandler : MonoBehaviour {
             if (_CurrentHealth != 0)
             DoDamage();
         }
+        
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void AddHealth()
@@ -50,6 +58,12 @@ public class GameHandler : MonoBehaviour {
         {
             _CurrentHealth--;
             _HealthObj[_CurrentHealth].SetActive(false);
+        }
+        
+        if(_CurrentHealth <= 0)
+        {
+            Time.timeScale = 0;
+            _GameOverMenu.SetActive(true);
         }
     }
 }
