@@ -28,15 +28,9 @@ public class Shooting : MonoBehaviour {
 
     private void Spawn()
     {
-        for (int i = 0; i < _ObjectPool._P_Objects.Count; i++)
-        {
-            if (!_ObjectPool._P_Objects[i].activeInHierarchy)
-            {
-                _ObjectPool._P_Objects[i].transform.position = _ShootPos.position;
-                _ObjectPool._P_Objects[i].transform.rotation = Quaternion.Euler(_PlayerObject.transform.rotation.eulerAngles.x, _PlayerObject.transform.rotation.eulerAngles.y + Random.Range(-_Accuracty, _Accuracty), _PlayerObject.transform.rotation.eulerAngles.z );
-                _ObjectPool._P_Objects[i].SetActive(true);
-                break;
-            }
-        }
+        GameObject bulletobj = _ObjectPool.GetObject("Bullet1");
+        bulletobj.transform.position = _ShootPos.position;
+        bulletobj.transform.rotation = Quaternion.Euler(_PlayerObject.transform.rotation.eulerAngles.x, _PlayerObject.transform.rotation.eulerAngles.y + Random.Range(-_Accuracty, _Accuracty), _PlayerObject.transform.rotation.eulerAngles.z);
+        bulletobj.SetActive(true);
     }
 }

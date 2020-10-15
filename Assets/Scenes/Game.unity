@@ -387,17 +387,6 @@ Transform:
   m_Father: {fileID: 2021911081}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &713927563 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114792398960812998, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
-  m_PrefabInstance: {fileID: 857075800}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54ac2c7421d06a4f8fff331ab0b202f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &737126255
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +861,10 @@ PrefabInstance:
       propertyPath: _SpawnPoints.Array.data[15]
       value: 
       objectReference: {fileID: 2049524525}
+    - target: {fileID: 114661625498261916, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
+      propertyPath: _ObjectPool
+      value: 
+      objectReference: {fileID: 1087020850}
     - target: {fileID: 114792398960812998, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
       propertyPath: _P_PrefabGameObject
       value: 
@@ -951,6 +944,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 368293037949575867, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
   m_PrefabInstance: {fileID: 368293038284387301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1087020849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1154763641187176, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
+  m_PrefabInstance: {fileID: 857075800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1087020850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087020849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54ac2c7421d06a4f8fff331ab0b202f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ObjectPools:
+  - _Name: Bullet1
+    _Prefab: {fileID: 1430887316569186, guid: 5728175ece6f86a418822048190a4b87, type: 3}
+    _Amount: 500
+    _Objects: []
+  - _Name: Enemy1
+    _Prefab: {fileID: 1434855838971842, guid: 014d3007c2e0fd34db0c5e6804189bc2, type: 3}
+    _Amount: 100
+    _Objects: []
 --- !u!1 &1392018647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1452,7 @@ PrefabInstance:
     - target: {fileID: 368293037949575866, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
       propertyPath: _ObjectPool
       value: 
-      objectReference: {fileID: 713927563}
+      objectReference: {fileID: 1087020850}
     - target: {fileID: 368293037949575867, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
       propertyPath: m_Name
       value: Player
