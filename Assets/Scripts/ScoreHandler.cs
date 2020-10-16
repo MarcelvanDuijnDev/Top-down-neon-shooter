@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ScoreHandler : MonoBehaviour {
+public class ScoreHandler : MonoBehaviour
+{
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI _ScoreText;
@@ -39,5 +40,8 @@ public class ScoreHandler : MonoBehaviour {
     public void AddScore(float scoreAdd)
     {
         _Score += scoreAdd;
+
+
+
     }
 }
