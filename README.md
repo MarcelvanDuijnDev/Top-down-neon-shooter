@@ -1,6 +1,6 @@
 # Top-down-neon-shooter
 
-**The Game** <br>
+**This project** <br>
 A simple game where you need to survive as long as you can while enemies spawn around you.
 
 **Project status: *(oct-2020)*** <br>
