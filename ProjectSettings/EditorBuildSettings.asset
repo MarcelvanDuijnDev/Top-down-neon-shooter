@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestMap.unity
     guid: 61afebfac1d7297479031e7168fe0ccd
+  - enabled: 1
+    path: Assets/Scenes/TestMap_BossFight.unity
+    guid: 9233fc2d1b945a144a847f3422158e0f
   m_configObjects: {}

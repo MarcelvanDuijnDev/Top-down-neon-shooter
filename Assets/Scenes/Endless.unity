@@ -931,9 +931,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 775693560}
     - target: {fileID: 114286816238711614, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
+      propertyPath: _SizeIncrease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114286816238711614, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
       propertyPath: _AliveTimeText
       value: 
       objectReference: {fileID: 506175154}
+    - target: {fileID: 114286816238711614, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
+      propertyPath: _SizeDecreaseSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114286816238711614, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
+      propertyPath: _HighestScoreAmount
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 114661625498261916, guid: f3edaf6303cd7574493dbda4e301f710, type: 3}
       propertyPath: _ObjectPool
       value: 
@@ -1185,7 +1197,7 @@ MonoBehaviour:
   _Sound:
   - AudioTrackName: BackGroundMusic
     Settings:
-      AudioClip: {fileID: 8300000, guid: 53efc094eaf846540b35e9c84468c709, type: 3}
+      AudioClip: {fileID: 8300000, guid: 19b920e7ed9013e409df96ce02cef3e7, type: 3}
       AudioGroup: {fileID: 0}
       AudioSource: {fileID: 0}
       CreateAudioSource: 1

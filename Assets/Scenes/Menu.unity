@@ -521,6 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891918286}
   - component: {fileID: 891918287}
+  - component: {fileID: 891918288}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -554,6 +555,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726ec3640ad189444add8d87d723343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &891918288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891918285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b682f20bc01064582afe51abbf2fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RefreshSettingsOnUpdate: 0
+  _AudioMixer: {fileID: 24300002, guid: cb248d5b7c154494c803b14599b6333c, type: 2}
+  _Sound:
+  - AudioTrackName: BackGroundMusic
+    Settings:
+      AudioClip: {fileID: 8300000, guid: 26dff77ba05566843bbdbf634ec544df, type: 3}
+      AudioGroup: {fileID: 0}
+      AudioSource: {fileID: 0}
+      CreateAudioSource: 1
+    AudioSettings:
+      Volume: 0.6
+      MaxVolume: 0.6
+      Loop: 1
+      PlayOnStart: 1
+      PlayOnStart_DiplicateOnly: 0
+    Audio3D:
+      Enable3DAudio: 0
+      SpatialPosition: {x: 0, y: 0, z: 0}
+      SpatialTransform: {fileID: 0}
+    AudioControl:
+      StartAudioOnScene: []
+      StopAudioOnScene: []
+      StopOnNextScene: 0
+      SceneEnabled: 0
+    AudioEffects:
+      FadeIn: 0
+      FadeInDuration: 0
+      FadeInSpeed: 0
+      FadeInDone: 0
+      FadingIn: 0
+      FadeOut: 0
+      FadeOutAfterTime: 0
+      FadeOutDuration: 0
+      FadeOutSpeed: 0
+      FadeOutDone: 0
+      FadingOut: 0
 --- !u!1 &1380105942
 GameObject:
   m_ObjectHideFlags: 0
