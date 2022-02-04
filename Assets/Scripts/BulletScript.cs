@@ -35,6 +35,13 @@ public class BulletScript : MonoBehaviour
                 _DisableScript.DisableObject(5);
                 _BulletObj.gameObject.SetActive(false);
             }
+            if (other.tag == "Boss")
+            {
+                _Particle.Play();
+                other.gameObject.GetComponent<EnemyBoss>().DoDamage(_Damage);
+                _DisableScript.DisableObject(5);
+                _BulletObj.gameObject.SetActive(false);
+            }
         }
     }
 }
