@@ -20,17 +20,18 @@ public class PlayerMovement : MonoBehaviour {
     private float _Speed;
     private Vector3 moveDirection = Vector3.zero;
     private BoxCollider _BC;
+    private CharacterController _CC;
 
     void Start()
     {
         _BC = GetComponent<BoxCollider>();
+        _CC = GetComponent<CharacterController>();
     }
 
     void Update()
     {
         //Movement
-        CharacterController controller = GetComponent<CharacterController>();
-        if (controller.isGrounded)
+        if (_CC.isGrounded)
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
             //    moveDirection.y = _JumpSpeed;
         }
         moveDirection.y -= _Gravity * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
+        _CC.Move(moveDirection * Time.deltaTime);
 
         //Dash
         if(Input.GetButtonDown("Jump"))

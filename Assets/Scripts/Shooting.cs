@@ -28,6 +28,7 @@ public class Shooting : MonoBehaviour {
 
     private void Spawn()
     {
+        AudioHandler.AUDIO.PlayTrack("GunShot");
         GameObject bulletobj = _ObjectPool.GetObject("Bullet1");
         bulletobj.transform.position = _ShootPos.position;
         bulletobj.transform.rotation = Quaternion.Euler(_PlayerObject.transform.rotation.eulerAngles.x, _PlayerObject.transform.rotation.eulerAngles.y + Random.Range(-_Accuracty, _Accuracty), _PlayerObject.transform.rotation.eulerAngles.z);
