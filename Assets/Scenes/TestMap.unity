@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: dbbc031ef7599c34ab04986c00b0b566, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 5c9f4e299731dc749805ef14172aa5c4, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -238,7 +238,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &213448909
 Transform:
@@ -1077,6 +1077,87 @@ MonoBehaviour:
     _Prefab: {fileID: 1434855838971842, guid: 014d3007c2e0fd34db0c5e6804189bc2, type: 3}
     _Amount: 100
     _Objects: []
+--- !u!114 &1087020855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087020849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b682f20bc01064582afe51abbf2fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RefreshSettingsOnUpdate: 0
+  _AudioMixer: {fileID: 24300002, guid: cb248d5b7c154494c803b14599b6333c, type: 2}
+  _Sound:
+  - AudioTrackName: BackGroundMusic
+    Settings:
+      AudioClip: {fileID: 8300000, guid: 53efc094eaf846540b35e9c84468c709, type: 3}
+      AudioGroup: {fileID: 0}
+      AudioSource: {fileID: 0}
+      CreateAudioSource: 1
+    AudioSettings:
+      Volume: 0.6
+      MaxVolume: 0.6
+      Loop: 1
+      PlayOnStart: 1
+      PlayOnStart_DiplicateOnly: 0
+    Audio3D:
+      Enable3DAudio: 0
+      SpatialPosition: {x: 0, y: 0, z: 0}
+      SpatialTransform: {fileID: 0}
+    AudioControl:
+      StartAudioOnScene: []
+      StopAudioOnScene: []
+      StopOnNextScene: 0
+      SceneEnabled: 0
+    AudioEffects:
+      FadeIn: 0
+      FadeInDuration: 0
+      FadeInSpeed: 0
+      FadeInDone: 0
+      FadingIn: 0
+      FadeOut: 0
+      FadeOutAfterTime: 0
+      FadeOutDuration: 0
+      FadeOutSpeed: 0
+      FadeOutDone: 0
+      FadingOut: 0
+  - AudioTrackName: GunShot
+    Settings:
+      AudioClip: {fileID: 8300000, guid: a8b1baae924a440449e2567a7eb1ddb6, type: 3}
+      AudioGroup: {fileID: 0}
+      AudioSource: {fileID: 0}
+      CreateAudioSource: 1
+    AudioSettings:
+      Volume: 0.35
+      MaxVolume: 0.35
+      Loop: 0
+      PlayOnStart: 0
+      PlayOnStart_DiplicateOnly: 0
+    Audio3D:
+      Enable3DAudio: 0
+      SpatialPosition: {x: 0, y: 0, z: 0}
+      SpatialTransform: {fileID: 0}
+    AudioControl:
+      StartAudioOnScene: []
+      StopAudioOnScene: []
+      StopOnNextScene: 0
+      SceneEnabled: 0
+    AudioEffects:
+      FadeIn: 0
+      FadeInDuration: 0
+      FadeInSpeed: 0
+      FadeInDone: 0
+      FadingIn: 0
+      FadeOut: 0
+      FadeOutAfterTime: 0
+      FadeOutDuration: 0
+      FadeOutSpeed: 0
+      FadeOutDone: 0
+      FadingOut: 0
 --- !u!1 &1122875087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,7 +1209,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1130653281
 Transform:
@@ -1223,7 +1304,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1285143977
 Transform:
@@ -1318,7 +1399,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &1392018648
 MeshCollider:
@@ -1670,7 +1751,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2069121227
 Transform:
