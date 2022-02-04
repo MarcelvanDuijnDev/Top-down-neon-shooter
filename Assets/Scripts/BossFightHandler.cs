@@ -15,7 +15,7 @@ public class BossFightHandler : MonoBehaviour
     [SerializeField] private GameObject _HealthBar;
 
     [Header("Camera")]
-    [SerializeField] private CameraController _CameraScript;
+    [SerializeField] private Movement_Camera _CameraScript;
 
     private bool _BossBattleEnabled;
 
@@ -31,7 +31,7 @@ public class BossFightHandler : MonoBehaviour
     { 
         if(_FakeBossObj.activeSelf)
         {
-            _CameraScript.ScreenShake(0.1f,0.3f);
+            _CameraScript.Effect_ScreenShake(0.1f,0.3f);
             _FakeBossObj.transform.position = Vector3.MoveTowards(_FakeBossObj.transform.position, _FakeBoss_Pos.position, _FakeBossMoveSpeed * Time.deltaTime);
             if(_FakeBossObj.transform.position == _FakeBoss_Pos.position)
             {

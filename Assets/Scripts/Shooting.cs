@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour {
 
-    [SerializeField] private CameraController _Camera;
+    [SerializeField] private Movement_Camera _Camera;
     [SerializeField] private GameObject _PlayerObject;
     [SerializeField] private Transform _ShootPos;
     [SerializeField] private ObjectPool _ObjectPool;
@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour {
         if(_Timer > _ShootSpeed)
         {
             Spawn();
-            _Camera.ScreenShake(0.1f, 0.1f);
+            _Camera.Effect_ScreenShake(0.1f, 0.1f);
             _Timer = 0;
         }
     }
