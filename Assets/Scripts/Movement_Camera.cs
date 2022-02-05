@@ -19,10 +19,14 @@ public class Movement_Camera : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float _Speed_Position = 1000;
-    [SerializeField] private float _Speed_Rotation = 1;
+
+    [Header("Aim Range")]
+    [SerializeField] private float _AimRange = 20;
 
     [Header("Other")]
     [SerializeField] private Transform _Target = null;
+    [SerializeField] private Transform _TargetRotationPoint = null;
+    [SerializeField] private Transform _MouseTarget = null;
     [SerializeField] private bool _LockAxis_X = false;
     [SerializeField] private bool _LockAxis_Y = false;
     [SerializeField] private bool _LockAxis_Z = false;
@@ -30,6 +34,14 @@ public class Movement_Camera : MonoBehaviour
     private Vector3 _TargetPosition;
     private float _ScreenShakeDuration;
     private float _ScreenShakeIntensity;
+    private Camera _Camera;
+
+    private void Start()
+    {
+        _Camera = GetComponentInChildren<Camera>();
+
+        Cursor.visible = false;
+    }
 
     void Update()
     {
@@ -51,6 +63,15 @@ public class Movement_Camera : MonoBehaviour
             z_axis = _OffsetPosition.z;
 
         _TargetPosition = new Vector3(x_axis, y_axis, z_axis);
+
+        //Aim
+        if (Input.GetMouseButton(1))
+        {
+            Vector3 mousetarget = _TargetRotationPoint.forward * _AimRange + _Target.position;
+            mousetarget.y = _TargetPosition.y;
+            _TargetPosition = Vector3.Lerp(_TargetPosition, mousetarget, 0.5f);
+            _TargetPosition.z -= _AimRange * 0.5f + -3;
+        }
 
         // Movement
         switch (_CameraOptionPos)
@@ -78,6 +99,16 @@ public class Movement_Camera : MonoBehaviour
                     break;
             }
         }
+
+        //Mouse Target
+        Plane plane = new Plane(Vector3.up, -_Target.position.y);
+        float distance;
+        Ray ray = _Camera.ScreenPointToRay(Input.mousePosition);
+        if (plane.Raycast(ray, out distance))
+        {
+            _MouseTarget.position = ray.GetPoint(distance);
+        }
+        _MouseTarget.rotation = _TargetRotationPoint.rotation;
     }
 
     //Effects

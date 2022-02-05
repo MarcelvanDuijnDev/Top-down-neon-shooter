@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour {
 
         //Look At Mouse Position
         Ray cameraRay = _Camera.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        Plane groundPlane = new Plane(Vector3.up, -transform.position.y);
         float rayLength;
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {

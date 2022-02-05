@@ -96,7 +96,7 @@ MonoBehaviour:
   _PlayerObject: {fileID: 1753094447129859244}
   _NormalSpeed: 10
   _SprintSpeed: 15
-  _Gravity: 3
+  _Gravity: 20
   _RollDuration: 0.5
   _DashSpeed: 50
   _PlayerObj_Cube: {fileID: 368293039581609955}
