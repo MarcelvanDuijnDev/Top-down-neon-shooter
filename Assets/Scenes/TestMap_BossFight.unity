@@ -956,11 +956,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239662075}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &305589429 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 380178621668691325, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
-  m_PrefabInstance: {fileID: 368293038284387301}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &314352873
 GameObject:
   m_ObjectHideFlags: 0
@@ -9174,6 +9169,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1716040115196173266, guid: 59dd3ace015d5a547891029a021cebd0, type: 3}
   m_PrefabInstance: {fileID: 1716040116103446022}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1263531644 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2113618073255754131, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
+  m_PrefabInstance: {fileID: 368293038284387301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1296120443
 GameObject:
   m_ObjectHideFlags: 0
@@ -13274,9 +13274,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1245504980}
     - target: {fileID: 4247515763582829880, guid: cc56226fd1891244985c9531e986b9c6, type: 3}
-      propertyPath: _TargetRotationPoint
+      propertyPath: _TargetAimObj
       value: 
-      objectReference: {fileID: 305589429}
+      objectReference: {fileID: 1263531644}
     - target: {fileID: 4247515763582829883, guid: cc56226fd1891244985c9531e986b9c6, type: 3}
       propertyPath: m_RootOrder
       value: 4

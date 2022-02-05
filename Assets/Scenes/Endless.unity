@@ -464,6 +464,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1765528332}
     - target: {fileID: 4247515763582829880, guid: cc56226fd1891244985c9531e986b9c6, type: 3}
+      propertyPath: _TargetAimObj
+      value: 
+      objectReference: {fileID: 368293038284387304}
+    - target: {fileID: 4247515763582829880, guid: cc56226fd1891244985c9531e986b9c6, type: 3}
       propertyPath: _TargetRotationPoint
       value: 
       objectReference: {fileID: 368293038284387303}
@@ -2056,5 +2060,10 @@ Transform:
 --- !u!4 &368293038284387303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 380178621668691325, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
+  m_PrefabInstance: {fileID: 368293038284387301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &368293038284387304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2113618073255754131, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
   m_PrefabInstance: {fileID: 368293038284387301}
   m_PrefabAsset: {fileID: 0}

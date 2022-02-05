@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
 
     //Movement
     [Header("Refrences")]
     [SerializeField] private Camera _Camera;
-    [SerializeField] private GameObject _PlayerObject;
+    [SerializeField] private GameObject _PlayerObj;
+    [SerializeField] private GameObject _AimObj;
 
     [Header("Speed")]
     [SerializeField] private float _NormalSpeed = 10;
@@ -56,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
         else
         {
             _CC.Move(_DashDirection * _DashSpeed * Time.deltaTime);
-        } 
+        }
 
         //Sprint
         if (Input.GetKey(KeyCode.LeftShift))
@@ -64,22 +66,35 @@ public class PlayerMovement : MonoBehaviour {
         else
             _Speed = _NormalSpeed;
 
-        //Look At Mouse Position
+        //Look At Mouse Position when shooting
+
         Ray cameraRay = _Camera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, -transform.position.y);
         float rayLength;
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-            _PlayerObject.transform.LookAt(new Vector3(pointToLook.x, _PlayerObject.transform.position.y, pointToLook.z));
+            if (Input.GetMouseButton(0))
+                _PlayerObj.transform.LookAt(new Vector3(pointToLook.x, _PlayerObj.transform.position.y, pointToLook.z));
+            _AimObj.transform.LookAt(new Vector3(pointToLook.x, _PlayerObj.transform.position.y, pointToLook.z));
+        }
+
+        if (!Input.GetMouseButton(0))
+        {
+            if (moveDirection.x != 0 && moveDirection.z != 0)
+            {
+                Vector3 lookrot = moveDirection;
+                lookrot.y = 0;
+                _PlayerObj.transform.rotation = Quaternion.LookRotation(lookrot);
+            }
         }
 
         //Visual
-        if(_Dashing)
+        if (_Dashing)
         {
             _PlayerObj_Cube.SetActive(false);
             _PlayerObj_Sphere.SetActive(true);
-        }    
+        }
         else
         {
             _PlayerObj_Cube.SetActive(true);

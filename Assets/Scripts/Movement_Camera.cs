@@ -25,7 +25,7 @@ public class Movement_Camera : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] private Transform _Target = null;
-    [SerializeField] private Transform _TargetRotationPoint = null;
+    [SerializeField] private Transform _TargetAimObj = null;
     [SerializeField] private Transform _MouseTarget = null;
     [SerializeField] private bool _LockAxis_X = false;
     [SerializeField] private bool _LockAxis_Y = false;
@@ -67,7 +67,7 @@ public class Movement_Camera : MonoBehaviour
         //Aim
         if (Input.GetMouseButton(1))
         {
-            Vector3 mousetarget = _TargetRotationPoint.forward * _AimRange + _Target.position;
+            Vector3 mousetarget = _TargetAimObj.forward * _AimRange + _Target.position;
             mousetarget.y = _TargetPosition.y;
             _TargetPosition = Vector3.Lerp(_TargetPosition, mousetarget, 0.5f);
             _TargetPosition.z -= _AimRange * 0.5f + -3;
@@ -108,7 +108,7 @@ public class Movement_Camera : MonoBehaviour
         {
             _MouseTarget.position = ray.GetPoint(distance);
         }
-        _MouseTarget.rotation = _TargetRotationPoint.rotation;
+        _MouseTarget.rotation = _TargetAimObj.rotation;
     }
 
     //Effects

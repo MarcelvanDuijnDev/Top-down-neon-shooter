@@ -165,9 +165,9 @@ MonoBehaviour:
   _OffsetPosition: {x: 0, y: 12, z: -10}
   _OffsetRotation: {x: -47, y: 0, z: 0}
   _Speed_Position: 50
-  _AimRange: 20
+  _AimRange: 10
   _Target: {fileID: 0}
-  _TargetRotationPoint: {fileID: 0}
+  _TargetAimObj: {fileID: 0}
   _MouseTarget: {fileID: 0}
   _LockAxis_X: 0
   _LockAxis_Y: 0

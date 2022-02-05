@@ -1755,6 +1755,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 325076048}
     - target: {fileID: 4247515763582829880, guid: cc56226fd1891244985c9531e986b9c6, type: 3}
+      propertyPath: _TargetAimObj
+      value: 
+      objectReference: {fileID: 2055896668}
+    - target: {fileID: 4247515763582829880, guid: cc56226fd1891244985c9531e986b9c6, type: 3}
       propertyPath: _TargetRotationPoint
       value: 
       objectReference: {fileID: 916133153}
@@ -4018,6 +4022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6889d84095b3745988207b3344b5e5, type: 3}
+--- !u!4 &2055896668 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2113618073255754131, guid: e3de20c46b2b5284a8a3efed7862a476, type: 3}
+  m_PrefabInstance: {fileID: 368293038284387301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1154763961146160
 GameObject:
   m_ObjectHideFlags: 0
