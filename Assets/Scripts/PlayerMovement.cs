@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     //Movement
     [Header("Refrences")]
     [SerializeField] private Camera _Camera;
@@ -67,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
             _Speed = _NormalSpeed;
 
         //Look At Mouse Position when shooting
-
         Ray cameraRay = _Camera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, -transform.position.y);
         float rayLength;
