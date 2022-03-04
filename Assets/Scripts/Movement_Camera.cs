@@ -13,6 +13,7 @@ public class Movement_Camera : MonoBehaviour
 
     [Header("Settings - Position")]
     [SerializeField] private Vector3 _OffsetPosition = new Vector3(0,12,-4);
+    [SerializeField] private bool _LerpPosition = true;
 
     [Header("Settings - Rotation")]
     [SerializeField] private Vector3 _OffsetRotation = Vector3.zero;
@@ -77,7 +78,10 @@ public class Movement_Camera : MonoBehaviour
         switch (_CameraOptionPos)
         {
             case CameraOptionsPos.Follow:
-                transform.position = Vector3.MoveTowards(transform.position, _TargetPosition, _Speed_Position * Time.deltaTime);
+                if (_LerpPosition)
+                    transform.position = Vector3.Lerp(transform.position, _TargetPosition, _Speed_Position * Time.deltaTime);
+                else
+                    transform.position = Vector3.MoveTowards(transform.position, _TargetPosition, _Speed_Position * Time.deltaTime);
                 break;
         }
 

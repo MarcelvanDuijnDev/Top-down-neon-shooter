@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0.47035405, y: -0, z: -0, w: 0.8824778}
   m_LocalPosition: {x: 0, y: 17.08, z: -8.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4247515763582829883}
   m_RootOrder: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -143,10 +145,11 @@ Transform:
   m_LocalRotation: {x: -0.08546914, y: 0, z: 0, w: 0.9963408}
   m_LocalPosition: {x: -62.92, y: 5.167395, z: -41.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4247515763533209957}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -9.806, y: 0, z: 0}
 --- !u!114 &4247515763582829880
 MonoBehaviour:
@@ -163,8 +166,9 @@ MonoBehaviour:
   _CameraOptionPos: 1
   _CameraOptionRot: 0
   _OffsetPosition: {x: 0, y: 12, z: -10}
+  _LerpPosition: 1
   _OffsetRotation: {x: -47, y: 0, z: 0}
-  _Speed_Position: 50
+  _Speed_Position: 3
   _AimRange: 10
   _Target: {fileID: 0}
   _TargetAimObj: {fileID: 0}
