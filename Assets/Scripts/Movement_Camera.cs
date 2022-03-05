@@ -19,18 +19,21 @@ public class Movement_Camera : MonoBehaviour
     [SerializeField] private Vector3 _OffsetRotation = Vector3.zero;
 
     [Header("Settings")]
-    [SerializeField] private float _Speed_Position = 1000;
+    [SerializeField] private float _Speed_Position = 3;
 
     [Header("Aim Range")]
-    [SerializeField] private float _AimRange = 20;
+    [SerializeField] private float _AimRange = 10;
 
-    [Header("Other")]
-    [SerializeField] private Transform _Target = null;
-    [SerializeField] private Transform _TargetAimObj = null;
-    [SerializeField] private Transform _MouseTarget = null;
+    [Header("Contraints")]
     [SerializeField] private bool _LockAxis_X = false;
     [SerializeField] private bool _LockAxis_Y = false;
     [SerializeField] private bool _LockAxis_Z = false;
+
+    [Header("Other")]
+    [SerializeField] private bool _EnableMouseCursor = false;
+    [SerializeField] private Transform _Target = null;
+    [SerializeField] private Transform _TargetAimObj = null;
+    [SerializeField] private Transform _MouseTarget = null;
 
     private Vector3 _TargetPosition;
     private float _ScreenShakeDuration;
@@ -40,8 +43,7 @@ public class Movement_Camera : MonoBehaviour
     private void Start()
     {
         _Camera = GetComponentInChildren<Camera>();
-
-        Cursor.visible = false;
+        Cursor.visible = _EnableMouseCursor;
     }
 
     void Update()
@@ -88,7 +90,7 @@ public class Movement_Camera : MonoBehaviour
         //ScreenShake
         if(_ScreenShakeDuration > 0)
         {
-            transform.localPosition = new Vector3(_TargetPosition.x + Random.insideUnitSphere.x * _ScreenShakeIntensity, _TargetPosition.y + Random.insideUnitSphere.y * _ScreenShakeIntensity, _TargetPosition.z);
+            transform.localPosition = new Vector3(transform.position.x + Random.insideUnitSphere.x * _ScreenShakeIntensity, transform.position.y + Random.insideUnitSphere.y * _ScreenShakeIntensity, transform.position.z);
             _ScreenShakeDuration -= 1 * Time.deltaTime;
         }
         else
