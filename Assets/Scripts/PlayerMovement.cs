@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //Quit game
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+
         //Movement
         if (!_Dashing)
         {
